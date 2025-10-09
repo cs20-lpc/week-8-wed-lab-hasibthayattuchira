@@ -73,4 +73,18 @@ double gRec(unsigned i) {
 
 double gStack(unsigned i) {
     // TODO
+    ArrayStack<unsigned> callStack;
+    while(i > 0){ // should push recursive calls into the stack
+        callStack.push(i);
+        i--;
+    }
+    cout << "Base Case!" << endl;
+    double result = 3.2;
+
+    while(!callStack.isEmpty()){ // should pop the stack and calculate result
+        callStack.pop();
+        result += 1.1;
+    }
+
+    return result;
 }
